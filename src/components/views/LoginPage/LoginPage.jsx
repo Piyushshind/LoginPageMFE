@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useState} from 'react'
 import PropTypes from 'prop-types'
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -25,30 +25,27 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
  * @returns LoginPage
  */
 
-function Copyright(props) {
-    return (
-      <Typography variant="body2" color="text.secondary" align="center" {...props}>
-        {'Copyright © '}
-        <Link color="inherit" href="https://mui.com/">
-          Your Website
-        </Link>
-        {new Date().getFullYear()}
-        
-      </Typography>
-    );
-  }
+
   
   const theme = createTheme();
 
 export const LoginPage = (props) => {
-    
+ 
+  // console.log(email)
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        console.log({
+        const dataa = {
           email: data.get('email'),
           password: data.get('password'),
-        });
+        };
+        const userData = localStorage.getItem('userDetails')
+         console.log(userData.password)
+         if(dataa.email==userData.email && dataa.password==userData.password){
+          alert('loged in succussesfull')
+         }else{
+          alert('fill coorect Details please')
+         }
     };
     return (
         <div>
@@ -67,7 +64,7 @@ export const LoginPage = (props) => {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Login
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
@@ -79,6 +76,7 @@ export const LoginPage = (props) => {
               name="email"
               autoComplete="email"
               autoFocus
+              
             />
             <TextField
               margin="normal"
@@ -89,6 +87,7 @@ export const LoginPage = (props) => {
               type="password"
               id="password"
               autoComplete="current-password"
+             
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -116,7 +115,7 @@ export const LoginPage = (props) => {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
+        
       </Container>
     </ThemeProvider> 
             
@@ -125,7 +124,7 @@ export const LoginPage = (props) => {
 }
 
 /**
- * Property type definations
+ * Property type definations  onChange={(e)=>setPassword(e.target.value)} onChange={(e)=>setEmail(e.target.value)}
  * 
  * @type {object}
  * @property {string} example - shows example - delete for in use

@@ -13,11 +13,11 @@ import classes from './MyInput.module.scss';
  * @returns MyInput
  */
 
-export const MyInput = ({placeholder,className}) => {
+export const MyInput = ({placeholder,className,maxLength,onChange}) => {
    
     return (
         <div className={classes.container}>
-            <input placeholder={placeholder} className={className}/>
+            <input placeholder={placeholder} className={className} maxLength={maxLength} onChange={onChange}/>
            
         </div>
     )

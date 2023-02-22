@@ -4,9 +4,9 @@
   border: 2px solid black;
   align-items: center;
   justify-content: flex-end;
-  width: 119.93rem;
+  /* width: 119.93rem; */
   height: 6.06rem;
-  background-color: brown;
+
 }
 .searchBar_div {
  color:blue;
@@ -26,8 +26,11 @@
 }
 
 .iconcontainer {
-  display: flex;
-  justify-content: space-between;
-  color: yellow;
+position: absolute;
+width: 10rem;
+height: 10rem;
+left: 35rem;
+top: 40rem;
+border:2px solid blue;
  
 }

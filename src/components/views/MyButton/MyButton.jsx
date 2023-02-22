@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import classes from './MyButton.module.scss';
+import classes from './MyButton.module.css';
 
 
 
@@ -13,11 +13,12 @@ import classes from './MyButton.module.scss';
  * @returns MyButton
  */
 
-export const MyButton = (props: MyButtonProps) => {
+export const MyButton = (props) => {
+    const {onClick,btnText,className}= props
     return (
-        <div className={classes.container}>
-            {props.example}
-        </div>
+        <button onClick={onClick} className={className}>
+            {btnText}
+        </button>
     )
 }
 
@@ -39,7 +40,7 @@ export const propTypes = {
  * @property {string} example='MyButton 
  */
 
-export const defaultProps: MyButtonProps = {
+export const defaultProps = {
     example:'MyButton'
 };
 

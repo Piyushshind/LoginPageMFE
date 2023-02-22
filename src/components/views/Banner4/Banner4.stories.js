@@ -1,13 +1,13 @@
 import React from 'react'
-import MyButton from './MyButton';
+import Banner4 from './Banner4';
 
 
 
 export default {
-    title: 'Component/MyButton',
+    title: 'Component/Banner4',
     parameters: {
-        component: MyButton,
-        componentSubtitle:'button componenet .....................................................',
+        component: Banner4,
+        componentSubtitle:'for banner purpose ............................................',
         docs: {
             description: {
                 component: ''
@@ -17,7 +17,7 @@ export default {
 };
 
 const Template = ( args ) => (
-    <MyButton {...args} />
+    <Banner4 {...args} />
 )
 
 export const BasicUsage = Template.bind( {} );
@@ -26,5 +26,5 @@ BasicUsage.args = {}
 export const Playground = Template.bind( {} );
 
 Playground.args = {
-    title: 'MyButton'
+    title: 'Banner4'
 }
