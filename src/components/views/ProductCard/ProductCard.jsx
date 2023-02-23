@@ -14,12 +14,15 @@ import { Text } from "../Text/Text";
 export const ProductCard = (props) => {
   const { productImage, vendor, productName, productPrice} = props;
   return (
+    <>
     <div className={classes.container}>
       <img src={productImage} />
       <Text variant="text-sm">{vendor}</Text>
       <Text variant="heading-sm">{productName}</Text>
       <Text>{productPrice}</Text>
     </div>
+    
+    </>
   );
 };
 

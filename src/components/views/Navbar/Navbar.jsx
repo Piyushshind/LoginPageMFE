@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import './Navbar.css';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineRestaurantMenu } from 'react-icons/md';
-
+import Text from '../Text/Text'
+import { Link } from 'react-router-dom';
 
 
 /**
@@ -17,22 +18,25 @@ import { MdOutlineRestaurantMenu } from 'react-icons/md';
 export const Navbar = (props) => {
     return (
         <nav className="app__navbar">
-            <div className="app__navbar-logo">
-                <img src='' alt="app__logo" />
-            </div>
+           
             <ul className="app__navbar-links">
-                <li className="p__opensans"><a href="#home">Home</a></li>
-                <li className="p__opensans"><a href="#about">About</a></li>
-                <li className="p__opensans"><a href="#menu">Menu</a></li>
-                <li className="p__opensans"><a href="#awards">Awards</a></li>
-                <li className="p__opensans"><a href="#contact">Contact</a></li>
+                <li className="p__opensans"><Text variant='text-sm'>Hot Deals</Text></li>
+                <Link to='/'> <li className="p__opensans"><Text variant='text-sm'>Home</Text></li></Link>
+                <li className="p__opensans"><Text variant='text-sm'>Food</Text></li>
+                <li className="p__opensans"> <Text variant='text-sm'>Vegetable</Text></li>
+                <li className="p__opensans"><Text variant='text-sm'>Drink</Text></li>
+                <li className="p__opensans"><Text variant='text-sm'>Cookies</Text></li>
+                <li className="p__opensans"><Text variant='text-sm'>Meat & Seafood</Text></li>
+                <li className="p__opensans"><Text variant='text-sm'>Bakery</Text></li>
             </ul>
             <div className="app__navbar-login">
-                <a href="#login" className="p__opensans">Log In / Registration</a>
+               <Link to='/login'><Text variant='text-sm'>Log In / </Text></Link> 
+               <Link to='/signIn'><Text variant='text-sm'> Registration</Text> </Link> 
                 <div />
-                <a href="/" className="p__opensans"></a>
+               
+                
             </div>
-
+            <Text variant='text-sm'>1800 213 321</Text>
         </nav>
     )
 }

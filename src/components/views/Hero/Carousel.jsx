@@ -53,8 +53,8 @@ const Carousele = () => {
     <Carousel
             data={data}
             time={2050}
-            width="78.12rem"
-            height="37.5rem"
+            width="112.12rem"
+            height="42.5rem"
             captionStyle={captionStyle}
             radius="10px"
             slideNumber={true}
@@ -66,13 +66,13 @@ const Carousele = () => {
             pauseIconSize="40px"
             slideBackgroundColor="darkgrey"
             slideImageFit="cover"
-            thumbnails={true}
+            thumbnails={false}
             thumbnailWidth="100px"
             style={{
               textAlign: "center",
-              maxWidth: "71.87rem",
-              maxHeight: "25rem",
-              margin: "40px auto",
+              maxWidth: "100.87rem",
+              maxHeight: "45rem",
+              margin: "60px auto",
             }}
           />
     </div>

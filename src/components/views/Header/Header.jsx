@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect ,useState} from "react";
 import PropTypes from "prop-types";
 import MyInput from "../MyInput/MyInput.jsx";
 import classes from "./Header.module.css";
@@ -14,23 +14,27 @@ import { VscAccount } from "react-icons/vsc";
  * @returns Header
  */
 
-
 export const Header = (props) => {
+  const [userInfo, setUserInfo] = useState()
+  useEffect(()=>{
+    const userData = JSON.parse(localStorage.getItem('userDetails'))
+    setUserInfo(userData)
+  },[])
+   console.log(userInfo)
   return (
     <div className={classes.container}>
+      <div><h3>{userInfo? userInfo.email :'guest' }</h3> </div>
       <div className={classes.searchBar_div}>
-        <MyInput placeholder="Search for item" className={classes.input}/>
+        <MyInput placeholder="Search for item" className={classes.inpute} />
+        
       </div>
-      <div className={classes.iconcontainer}>
+      <div className={classes.iconcontainer}>  
+      <VscAccount />
+      <BsHeart />
+      <BsCart3 />
+      </div>
      
-          <VscAccount />
-  
-          <BsHeart />
-     
-          <BsCart3 />
-          </div>
-  
-      <image src="" />
+      
     </div>
   );
 };

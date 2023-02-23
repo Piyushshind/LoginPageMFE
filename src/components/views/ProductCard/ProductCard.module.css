@@ -1,7 +1,7 @@
 .container {
   background-color: gray;
   border-radius: var(--bd-radius);
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 1.25rem;
   width: fit-content;
 }

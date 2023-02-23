@@ -31,7 +31,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 export const LoginPage = (props) => {
  
-  // console.log(email)
+  
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -39,10 +39,11 @@ export const LoginPage = (props) => {
           email: data.get('email'),
           password: data.get('password'),
         };
-        const userData = localStorage.getItem('userDetails')
-         console.log(userData.password)
+        const userData = JSON.parse(localStorage.getItem('userDetails'))
+         
          if(dataa.email==userData.email && dataa.password==userData.password){
           alert('loged in succussesfull')
+          
          }else{
           alert('fill coorect Details please')
          }

@@ -1,12 +1,13 @@
 .app__navbar {
-    width: 119.93rem;
-    /* height: ; */
+    width: 100%;
+    height: 5rem ;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background: #81813D; */
-    position: absolute;
+    background:  #E5E5E5;
+    position:sticky;
     padding: 1rem 2rem;
+    border: 3px solid red;
 }
 
 .app__navbar-logo {

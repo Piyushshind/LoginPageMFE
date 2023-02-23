@@ -43,8 +43,7 @@ export const RegisterPage = (props) => {
       
      }
     return (
-        <div >
-          <section>
+        
         <div className="register">
             <div className="col-1">
                 <h2>Create an Account</h2>
@@ -56,16 +55,15 @@ export const RegisterPage = (props) => {
                    
                     <MyInput className='Input_register' onChange={(e)=>setPhone(e.target.value)} placeholder='mobile number'value={phone} />
                     {error && <p>{error}</p>}
-                    <MyButton className='btn' onClick={handleSubmit} btnText='Sign In'/>
-                    {/* <button  className='btn'>Sign In</button> */}
+                    <MyButton className='btn' onClick={handleSubmit} btnText='Register'/>
+                   
                 </form>
 
             </div>
             <div className="col-2">
-                <img src='https://media.istockphoto.com/id/589417822/photo/fresh-fruits-and-vegetables.jpg?s=612x612&w=is&k=20&c=We29D01wS_wJKUe9mlq1wBTxvuWfqeJtDhv0v81IRPU=' alt="asd" />
+                <img src='https://media.gettyimages.com/id/1313326409/photo/womens-hands-type-text-on-the-keyboard-of-a-computer-or-laptop-an-office-worker-at-his-desk.jpg?s=612x612&w=0&k=20&c=YxytuknpTgLVsvXVSdHAUdjKqg6twC9HAXeHsep_w2c=' alt="Register-img" />
             </div>
-        </div>
-        </section>
+       
         </div>
     )
 }

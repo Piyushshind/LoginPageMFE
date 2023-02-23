@@ -1,13 +1,19 @@
 
 
 .register{
-    max-width: 978px;
+    max-width: 70rem;
     width: 100vw;
-    display:flex;
-    border: 1px solid #e9ecef;
+    position: absolute;
+    border: 3px solid #e2edf3;
     border-radius: 5px;
-    /* box-shadow: 1px 3px 10px #e9ecef; */
-    background-color: white;
+    box-shadow: 1px 3px 10px #104f8f;
+    background-color: #d4e2f1;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    align-items:center;
+   
+  
   }
   
   .register span{
@@ -29,7 +35,7 @@
     padding: .9em 1em;
   }
   .Input_register{
-    border: 1px solid #1c80e4;
+    border: 2px solid #1c80e4;
     padding: .9em 1em;
     outline: none;
     width: 19.5rem;
@@ -45,8 +51,9 @@
   #form > .btn{
     background-color: #003049;
     color: #e9ecef;
-    font-size: 1em;
+    font-size: 1.1em;
     cursor: pointer;
+    border-radius: 35px;
   }
   
   .flex{
@@ -57,10 +64,11 @@
   .flex-col{
     flex-direction: column;
   }
-  
+ 
   .register .col-1{
     margin: auto;
     padding: 3em 0;
+   
   }
   
   .register .col-2 img{
@@ -71,6 +79,8 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     display: none;
+    border: 3px solid rgb(73, 163, 236);
+    border-radius: 18px;
   }
   
   @media screen and (min-width: 860px)  {
