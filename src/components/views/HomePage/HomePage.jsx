@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import classes from './HomePage.module.css';
-import ProductCard from '../ProductCard/ProductCard';
+import ProductCard from 'HomePageMFE/ProductCard';
 import Hero from '../Hero/Hero';
 import Vertical from '../Vertical/Vertical';
-import {productData} from '../../../Constdata/mockdata'
+import { productData } from '../../../Constdata/mockdata'
 
 
 /**
@@ -17,18 +17,18 @@ import {productData} from '../../../Constdata/mockdata'
  */
 
 export const HomePage = (props) => {
-    
+
     return (
-        
+
         <div className={classes.container}>
-            {productData.map((x)=>{
-                return( <Vertical> <ProductCard  {...x}/> </Vertical>)
+            {productData.map((x) => {
+                return (<Vertical> <ProductCard  {...x} /> </Vertical>)
             }
-                
-            
-               
+
+
+
             )}
-           
+
             <Hero />
         </div>
     )
@@ -53,7 +53,7 @@ export const propTypes = {
  */
 
 export const defaultProps = {
-    example:'HomePage'
+    example: 'HomePage'
 };
 
 HomePage.propTypes = propTypes;

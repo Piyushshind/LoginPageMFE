@@ -4,7 +4,7 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
-    publicPath: "http://localhost:8080/",
+    publicPath: "http://localhost:3002/",
   },
 
   resolve: {
@@ -12,8 +12,9 @@ module.exports = {
   },
 
   devServer: {
-    port: 8080,
+    port: 3002,
     historyApiFallback: true,
+    open: false
   },
 
   module: {
@@ -41,13 +42,15 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "host",
+      name: "LoginPageMFE",
       filename: "remoteEntry.js",
       remotes: {
-      
+        HomePageMFE: 'HomePageMFE@http://localhost:3001/remoteEntry.js',
+        CheckoutPageMFE: 'CheckoutPageMFE@http://localhost:3003/remoteEntry.js',
+        ProductPageMFE: 'ProductPageMFE@http://localhost:3004/remoteEntry.js',
       },
       exposes: {
-       
+        './Text': './src/components/views/Text/Text.jsx'
       },
       shared: {
         ...deps,
