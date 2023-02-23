@@ -12,17 +12,25 @@ import Timepass from "./Timepass";
 import Banner4 from "./components/views/Banner4/Banner4";
 import MyButton from './components/views/MyButton/MyButton'
 
-const App = () => (
-  <div >
-    <Header />
-    <Navbar />
+
+
+const App = () =>{
   
-    {/* <ProductCard /> */}
-    <LoginPage /> 
-    {/* <RegisterPage />
-    {/* <Hero/> */}
-    <Banner4>{<Text>Bhavish</Text>}
-    {<MyButton>Shop Now</MyButton>}</Banner4>
-  </div>
-);
+ 
+  return (
+  
+    < >
+    
+      {/* <Header /> */}
+      {/* <Navbar /> */}
+    
+      {/* <ProductCard /> */}
+      {/* <LoginPage />  */}
+      {/* <RegisterPage /> */}
+       <Hero/> 
+      {/* <Banner4>{<Text>Bhavish</Text>}
+      {<MyButton>Shop Now</MyButton>}</Banner4> */}
+    </>
+  );
+} 
 ReactDOM.render(<App />, document.getElementById("app"));
