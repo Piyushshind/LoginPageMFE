@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import classes from './HomePage.module.css';
 import ProductCard from 'HomePageMFE/ProductCard';
 import Hero from '../Hero/Hero';

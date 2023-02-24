@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './Navbar.css';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { MdOutlineRestaurantMenu } from 'react-icons/md';
 import Text from '../Text/Text'
 import { Link } from 'react-router-dom';
 
