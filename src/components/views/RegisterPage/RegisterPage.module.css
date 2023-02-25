@@ -17,17 +17,18 @@
   }
   
   .register span{
-    color: #adb5bd;
+    color: #595c5f;
   }
   
   #form{
     max-width: 320px;
     width: 100vw;
     margin: 2em auto;
+    
   }
   
-  #form >  input, .btn{
-    border: 1px solid #e9ecef;
+ .btn{
+    border: 1px solid #eef0f2;
     padding: .9em 1em;
   }
   .MyInput, .btn{
@@ -48,30 +49,32 @@
     outline: none;
   } */
   
-  #form > .btn{
-    background-color: #003049;
+  .btn{
+    background-color:#253D4E;
     color: #e9ecef;
     font-size: 1.1em;
     cursor: pointer;
     border-radius: 35px;
   }
   
-  .flex{
+  .flexx{
     display: flex;
     gap: 1em;
   }
   
-  .flex-col{
+  .flexx{
     flex-direction: column;
+    margin: auto;
+    padding: 3em 0;
   }
  
-  .register .col-1{
+  .register .flexx{
     margin: auto;
     padding: 3em 0;
    
   }
   
-  .register .col-2 img{
+  .register .col img{
     width: 480px;
     height: 100%;
     object-fit: cover;
@@ -84,7 +87,7 @@
   }
   
   @media screen and (min-width: 860px)  {
-    .register .col-2 img{
+    .register .col img{
       display: initial;
     }
   }

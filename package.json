@@ -60,6 +60,7 @@
     "react-hook-form": "^7.43.1",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.8.1",
+    "recoil": "^0.7.6",
     "sass": "^1.58.3"
   }
 }

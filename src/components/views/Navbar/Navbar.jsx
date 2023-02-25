@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './Navbar.css';
+import styles from './Navbar.module.css';
 import Text from '../Text/Text'
-import { Link } from 'react-router-dom';
-
+import { NavLink } from 'react-router-dom';
+import MyInput from '../MyInput/MyInput';
+import { FaSearchengin } from "react-icons/fa";
+import MyButton from '../MyButton/MyButton';
 
 /**
  * Impliments Navbar component
@@ -15,27 +17,27 @@ import { Link } from 'react-router-dom';
 
 export const Navbar = (props) => {
     return (
-        <nav className="app__navbar">
-           
-            <ul className="app__navbar-links">
-                <li className="p__opensans"><Text variant='text-sm'>Hot Deals</Text></li>
-                <Link to='/'> <li className="p__opensans"><Text variant='text-sm'>Home</Text></li></Link>
-                <li className="p__opensans"><Text variant='text-sm'>Food</Text></li>
-                <li className="p__opensans"> <Text variant='text-sm'>Vegetable</Text></li>
-                <li className="p__opensans"><Text variant='text-sm'>Drink</Text></li>
-                <li className="p__opensans"><Text variant='text-sm'>Cookies</Text></li>
-                <li className="p__opensans"><Text variant='text-sm'>Meat & Seafood</Text></li>
-                <li className="p__opensans"><Text variant='text-sm'>Bakery</Text></li>
-            </ul>
-            <div className="app__navbar-login">
-               <Link to='/login'><Text variant='text-sm'>Log In / </Text></Link> 
-               <Link to='/signIn'><Text variant='text-sm'> Registration</Text> </Link> 
-                <div />
-               
-                
-            </div>
-            <Text variant='text-sm'>1800 213 321</Text>
-        </nav>
+       <>
+             <nav className={styles.navbar}>
+      <div className={styles.brand}>Piyush</div>
+      {/* <div className={styles.search}>
+        <MyInput type="text" placeholder="Search" onChange={(e)=>e.target.value} className={styles.searchbox}/>
+        <MyButton type="submit" btnText={<FaSearchengin />}  className={styles.btnsearch}/>
+      </div> */}
+      <ul className={styles.navbarNav}>
+        <li className={styles.navItem}>
+          <NavLink className={styles.navLink} activeClassName={styles.activeNavLink} exact to="/">Home</NavLink>
+        </li>
+        <li className={styles.navItem}>
+          <NavLink className={styles.navLink} activeClassName={styles.activeNavLink} to="/login">Login</NavLink>
+        </li>
+        <li className={styles.navItem}>
+          <NavLink className={styles.navLink} activeClassName={styles.activeNavLink} to="/signIn">Register</NavLink>
+        </li>
+      </ul>
+    </nav>
+
+       </>
     )
 }
 

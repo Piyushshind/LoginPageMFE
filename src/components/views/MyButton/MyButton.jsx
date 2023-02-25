@@ -14,9 +14,9 @@ import classes from './MyButton.module.css';
  */
 
 export const MyButton = (props) => {
-    const {onClick,btnText,className}= props
+    const {onClick,btnText,className,type}= props
     return (
-        <button onClick={onClick} className={className}>
+        <button onClick={onClick} className={className} type={type}>
             {btnText}
         </button>
     )

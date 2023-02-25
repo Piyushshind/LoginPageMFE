@@ -5,6 +5,9 @@ import classes from "./Header.module.css";
 import { BsCart3 } from "react-icons/bs";
 import { BsHeart } from "react-icons/bs";
 import { VscAccount } from "react-icons/vsc";
+import styles from './Header.module.css'
+import { useRecoilValue } from "recoil";
+import { cartCount, userData } from "../../../Recoil/Recoil.js";
 
 /**
  * Impliments Header component
@@ -15,27 +18,37 @@ import { VscAccount } from "react-icons/vsc";
  */
 
 export const Header = (props) => {
-  const [userInfo, setUserInfo] = useState()
-  useEffect(()=>{
-    const userData = JSON.parse(localStorage.getItem('userDetails'))
-    setUserInfo(userData)
-  },[])
-   console.log(userInfo)
+  const cardCount = useRecoilValue(cartCount)
+  const data = useRecoilValue(userData)
+  console.log('gjhklk.',data)
+  // useEffect(()=>{
+  //   const userData = JSON.parse(localStorage.getItem('userDetails'))
+  //   setUserInfo(userData)
+  // },[])
+   
+  
   return (
-    <div className={classes.container}>
-      <div><h3>{userInfo? userInfo.email :'guest' }</h3> </div>
-      <div className={classes.searchBar_div}>
-        <MyInput placeholder="Search for item" className={classes.inpute} />
+   <>
+      <header className={styles.header}>
+      <div className={styles.menu}>
+        <i className="fas fa-bars"></i>
+      </div>
+      <div className={styles.logo}>
+        <img
+          src="https://play-lh.googleusercontent.com/EuiZnkT8aEKjXDLX74DTp1VRIwWaeRa8Dvo-LOGAxy1FPQ8GzABTIRenksiM-A7Oz48g"
+          alt="Flipkart logo"
+        />
+      </div>
+      <div className={styles.search}>
+        <input type="text" placeholder="Search for products, brands and more" />
         
       </div>
-      <div className={classes.iconcontainer}>  
-      <VscAccount />
-      <BsHeart />
-      <BsCart3 />
+      <div className={styles.cart}>
+        <span><h3>{cardCount}</h3></span>
+      <h2>{data? data.name :'guest' }</h2>
       </div>
-     
-      
-    </div>
+    </header>
+   </>
   );
 };
 

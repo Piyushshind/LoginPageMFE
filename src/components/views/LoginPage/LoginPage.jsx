@@ -51,7 +51,7 @@ export const LoginPage = (props) => {
     return (
         <div>
             <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="sm">
         <CssBaseline />
         <Box
           sx={{
@@ -103,7 +103,7 @@ export const LoginPage = (props) => {
               Sign In
             </Button>
             <Grid container>
-              <Grid item xs>
+              <Grid item sm>
                 <Link href="#" variant="body2">
                   Forgot password?
                 </Link>
