@@ -1,3 +1,12 @@
+export function isValidName(value) {
+  const NameRegex = /^[a-z ,.'-]+$/i ;
+  if(NameRegex.test(value)){
+      return true
+   } else{
+          return false
+      }
+  }
+
 
   export function isValidMobile(value) {
     const MobilrRegex = /^[6-9]\d{9}$/ ;

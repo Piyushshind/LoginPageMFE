@@ -13,7 +13,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-//import classes from './LoginPage.module.css';
+import classes from './LoginPage.module.css';
 
 
 
@@ -40,18 +40,20 @@ export const LoginPage = (props) => {
           password: data.get('password'),
         };
         const userData = JSON.parse(localStorage.getItem('userDetails'))
-         
-         if(dataa.email==userData.email && dataa.password==userData.password){
+       const finalData = userData.filter((x)=>{x.email===dataa.email && x.password===dataa.password})
+         if(finalData.length>0 ){
           alert('loged in succussesfull')
-          
+         
          }else{
           alert('fill coorect Details please')
+          return
          }
+         console.log(finalData ,'from login')
     };
     return (
         <div>
             <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="sm">
         <CssBaseline />
         <Box
           sx={{
@@ -103,7 +105,7 @@ export const LoginPage = (props) => {
               Sign In
             </Button>
             <Grid container>
-              <Grid item xs>
+              <Grid item sm>
                 <Link href="#" variant="body2">
                   Forgot password?
                 </Link>
