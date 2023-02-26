@@ -1,4 +1,3 @@
-import HomePage from "HomePageMFE/Hero";
 import SingleProductPage from 'ProductPageMFE/SingleProductCard';
 import React from "react";
 import ReactDOM from "react-dom";
@@ -8,8 +7,6 @@ import Header from "./components/views/Header/Header";
 import Navbar from "./components/views/Navbar/Navbar";
 import "./index.css";
 import RegisterPage from "./components/views/RegisterPage/RegisterPage";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Centerlizer from "./components/views/Centerlizer/Centerlizer";
 import ErrorPage from "./components/views/ErrorPage/ErrorPage";
 import Footer from 'HomePageMFE/Footer'
 import HomePage from 'HomePageMFE/HomePage'
