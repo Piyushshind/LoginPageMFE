@@ -1,5 +1,5 @@
 .header {
-  background: linear-gradient(to right, #abaef1, #e2c9eb), linear-gradient(to left, #000, #fff);  color: #fff;
+  background: linear-gradient(to right, #d9fbff, #ffffff), linear-gradient(to left, #000, #fff);  color: #fff;
   color: rgb(0, 0, 0);
   display: flex;
   justify-content: space-between;
@@ -46,22 +46,25 @@
     align-items: center;
     border: 3px solid rgb(52, 187, 255);
     border-radius: 2rem;
-    padding: 0.3rem 0.5rem;
+    /* padding: 0.3rem 0.5rem; */
     width: 45%;
   }
 
   .search input {
     border: none;
     flex: 1;
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
     font-size: 0.9rem;
-    color: #b5b4b4;
-    background-color: rgb(178, 181, 188);
+    color: #ffffff;
+    background-color: rgb(255, 255, 255);
     border-radius: 2rem;
+    width: 10rem;
+    
+    
   }
 
   .search i {
-    color: #2874f0;
+    color: #bcd4fa;
   }
 
   .cart i {

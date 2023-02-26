@@ -24,30 +24,43 @@ export const RegisterPage = (props) => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [phone, setPhone] = useState("");
-    const setData = useSetRecoilState(userData)
+    const [Data, setData] = useState([]);
+    // const setData = useSetRecoilState(userData)
     
     
     
 
-    const dataObj ={
-        name:name,
-        email:email,
-        password:password,
-        phone:phone
-    }
+   
     
      const handleSubmit = () => {
+       
+
        if(isValidName(name)===true && isValidEmail(email)===true && isValidPassword(password)===true && isValidMobile(phone)===true){
         window.alert('Registration Complete !!');
-        // localStorage.setItem('userDetails', JSON.stringify(dataObj));
-        setData(dataObj)
+        const dataObj ={
+            name:name,
+            email:email,
+            password:password,
+            phone:phone
+        }
+         
+        
+        setData([...Data,dataObj])
+        setEmail('')
+        setName('')
+        setPhone('')
+        setPassword('')
        
        }else{
+        
         window.alert('enter correct details')
+        return
        }
-       console.log(dataObj)
+    
+     
       
      }
+     localStorage.setItem('userDetails', JSON.stringify(Data));
     return (
         
         <div className={style.register}>

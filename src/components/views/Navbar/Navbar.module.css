@@ -2,8 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, #131bb7, #a807e2), linear-gradient(to left, #000, #fff);  color: #fff;
+  background: linear-gradient(to right, #e1e1e6, #ffffff), linear-gradient(to left, #000, #fff);  color: #fff;
   padding: 20px;
+  color: #000000;
    }
 
 .brand {
@@ -43,7 +44,7 @@ input {
 .navbarNav {
   display: flex;
   list-style: none;
-  
+
 }
 
 .navItem {
@@ -53,12 +54,13 @@ input {
 }
 
 .navLink {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
 }
 
 .activeNavLink {
   font-weight: bold;
+  color: red;
 }
 
 @media (max-width: 768px) {

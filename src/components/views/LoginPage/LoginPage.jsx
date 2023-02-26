@@ -40,13 +40,15 @@ export const LoginPage = (props) => {
           password: data.get('password'),
         };
         const userData = JSON.parse(localStorage.getItem('userDetails'))
-         
-         if(dataa.email==userData.email && dataa.password==userData.password){
+       const finalData = userData.filter((x)=>{x.email===dataa.email && x.password===dataa.password})
+         if(finalData.length>0 ){
           alert('loged in succussesfull')
-          
+         
          }else{
           alert('fill coorect Details please')
+          return
          }
+         console.log(finalData ,'from login')
     };
     return (
         <div>

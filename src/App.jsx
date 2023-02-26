@@ -12,7 +12,8 @@ import SingleProductPage from 'ProductPageMFE/SingleProductCard'
 import { RecoilRoot } from "recoil";
 import ErrorPage from "./components/views/ErrorPage/ErrorPage";
 import ProductCard from "./components/views/ProductCard/ProductCard";
-
+import AppHeader from "./components/views/AppHeader/AppHeader";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
 
 
@@ -23,14 +24,15 @@ const App = () => {
         <div >
           <Header />
           <Navbar />
+          {/* <AppHeader /> */}
           <Centerlizer>
             <Routes>
               <Route path='/' element={<HomePage />} />
-              <Route path='/login' element={<LoginPage />} />
+              {/* <Route path='/login' element={<LoginPage />} /> */}
               <Route path='/signIn' element={<RegisterPage />} />
-              <Route path='/product' element={<SingleProductPage />} />
-              <Route path='/checkout' element={<SingleProductPage />} />
-              {/* <Route path='*' element={<ErrorPage />} /> */}
+              {/* <Route path='/product' element={<SingleProductPage />} />
+              <Route path='/checkout' element={<SingleProductPage />} /> */}
+              <Route path="*" element={<ErrorPage />}/>
             </Routes>
 
 
@@ -38,7 +40,7 @@ const App = () => {
 
 
 
-          <ProductCard />
+          {/* <ProductCard /> */}
 
 
           {/* <Hero/>  */}

@@ -20,7 +20,7 @@ export const HomePage = (props) => {
     return (
 
         <div className={classes.container}>
-            {productData.map((x) => {
+            {/* {productData.map((x) => {
                 return (<Vertical> <ProductCard  {...x} /> </Vertical>)
             }
 
@@ -28,7 +28,7 @@ export const HomePage = (props) => {
 
             )}
 
-            <Hero />
+            <Hero /> */}
         </div>
     )
 }

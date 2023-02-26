@@ -16,25 +16,29 @@ import classes from './ErrorPage.module.css';
 export const ErrorPage = (props) => {
     return (
         <div className={classes.container}>
-         <section className={style.page_404}>
-	< div className={style.container}>
-		<div className={style.row}>	
-		<div className={style.col}>
+         <section className={classes.page_404}>
+	< div className={classes.container}>
+		<div className={classes.row}>	
+		<div className={classes.col}>
+		<img src='https://s3-alpha-sig.figma.com/img/08a0/5ebb/ee289850f852e7ca584541b272910f98?Expires=1678060800&Signature=CFuz8D6ICxL3iGSMSfo8nyoEo5QetlAneVupoDZg-xCUJeHzlDmgXyRoHIkaq2zA6Kddhtg2f3QcNqwmcPw1R71G4J1HhYvKHyn5-1JMhPe3byhAjkBwa8h2FG-yC4O9lpxGV8vwoySaBnGZuXzzlLFqwaFw58dYqvqlUsF6DLyfd-1soKteDa6S8SP5G6Nh9hL1WS9-GSkKnlqO4lMCTc4BTohrcPPHt-k-Tr6r0XJxDhKDlJdseY3reCP5hliwu7v2sWjlVqPUoRrSDuo6hna9nlirtaY6MBTeJ0LHKA0gpTN-tYyyy4jn-YzmiGtivewkQIjMOMm~EayWUSEJrQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'
+				alt='error'
+				/>
+		<div className={classes.four_zero_four_bg}>
+			<h1 className={classes.text }>
+				Please Cheack your URL else try again later
+			</h1>
 		
-		<div className={style.four_zero_four_bg}>
-			<h1 className={style.text }>404</h1>
-		
-		
+			
 		</div>
 		
-		<div className={style.contant_box_404}>
-		<h3 className={style.h2}>
+		<div className={classes.contant_box_404}>
+		<h3 className={classes.h2}>
 		Look like you're lost
 		</h3>
 		
 		<p>the page you are looking for not avaible!</p>
 		
-		<a href="/" className={style.link_404}>Go to Home</a>
+		<a href="/" className={classes.link_404}>Go to Home</a>
 	</div>
 		</div>
 		</div>
