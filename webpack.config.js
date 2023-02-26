@@ -52,9 +52,9 @@ module.exports = {
       },
       exposes: {
         './Text': './src/components/views/Text/Text.jsx',
-        '/LoginPage':'./src/components/views/LoginPage/LoginPage.jsx',
-        '/RegisterPage':'./src/components/views/RegisterPage/RegisterPage.jsx',
-        '/ErrorPage':'./src/components/views/ErrorPage/ErrorPage.jsx'
+        './LoginPage':'./src/components/views/LoginPage/LoginPage.jsx',
+        './RegisterPage':'./src/components/views/RegisterPage/RegisterPage.jsx',
+        './ErrorPage':'./src/components/views/ErrorPage/ErrorPage.jsx'
       },
       shared: {
         ...deps,

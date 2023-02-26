@@ -1,21 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Header from "./components/views/Header/Header";
-import LoginPage from "./components/views/LoginPage/LoginPage";
 import Navbar from "./components/views/Navbar/Navbar";
 import "./index.css";
 import RegisterPage from "./components/views/RegisterPage/RegisterPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "HomePageMFE/Hero";
+// import HomePage from "HomePageMFE/Hero";
 import Centerlizer from "./components/views/Centerlizer/Centerlizer";
-import SingleProductPage from 'ProductPageMFE/SingleProductCard'
 import { RecoilRoot } from "recoil";
 import ErrorPage from "./components/views/ErrorPage/ErrorPage";
-import ProductCard from "./components/views/ProductCard/ProductCard";
-import AppHeader from "./components/views/AppHeader/AppHeader";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from 'HomePageMFE/Footer'
-
+import HomePage from 'HomePageMFE/HomePage'
 const App = () => {
 
 
@@ -23,6 +18,7 @@ const App = () => {
     <BrowserRouter>
     <RecoilRoot>
       < >
+      
         <div >
           <Header />
           <Navbar />
@@ -30,7 +26,7 @@ const App = () => {
           {/* <AppHeader /> */}
           <Centerlizer>
             <Routes>
-              <Route path='/' element={<HomePage />} />
+              <Route path='/' element={<HomePage/>} />
               {/* <Route path='/login' element={<LoginPage />} /> */}
               <Route path='/signIn' element={<RegisterPage />} />
               {/* <Route path='/product' element={<SingleProductPage />} />
