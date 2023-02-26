@@ -14,6 +14,8 @@ import ErrorPage from "./components/views/ErrorPage/ErrorPage";
 import ProductCard from "./components/views/ProductCard/ProductCard";
 import AppHeader from "./components/views/AppHeader/AppHeader";
 // import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from 'HomePageMFE/Footer'
+
 const App = () => {
 
 
@@ -24,6 +26,7 @@ const App = () => {
         <div >
           <Header />
           <Navbar />
+          <Footer />
           {/* <AppHeader /> */}
           <Centerlizer>
             <Routes>
@@ -33,6 +36,7 @@ const App = () => {
               {/* <Route path='/product' element={<SingleProductPage />} />
               <Route path='/checkout' element={<SingleProductPage />} /> */}
               <Route path="*" element={<ErrorPage />}/>
+              
             </Routes>
 
 
