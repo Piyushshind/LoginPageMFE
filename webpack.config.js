@@ -1,5 +1,8 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const dotenv = require("dotenv");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+
+dotenv.config()
 
 const deps = require("./package.json").dependencies;
 module.exports = {
@@ -45,7 +48,7 @@ module.exports = {
       name: "LoginPageMFE",
       filename: "remoteEntry.js",
       remotes: {
-        HomePageMFE: 'HomePageMFE@http://localhost:3001/remoteEntry.js',
+        HomePageMFE: `HomePageMFE@${process.env.HomePageMfe}remoteEntry.js`,
         LoginPageMFE: 'LoginPageMFE@http://localhost:3002/remoteEntry.js',
         CheckoutPageMFE: 'CheckoutPageMFE@http://localhost:3003/remoteEntry.js',
         ProductPageMFE: 'ProductPageMFE@http://localhost:3004/remoteEntry.js',
@@ -57,6 +60,7 @@ module.exports = {
         './LoginPage': './src/components/views/LoginPage/LoginPage.jsx',
         './RegisterPage': './src/components/views/RegisterPage/RegisterPage.jsx',
         './ErrorPage': './src/components/views/ErrorPage/ErrorPage.jsx',
+        './ReactRouterDom': 'react-router-dom',
       },
       shared: {
         ...deps,

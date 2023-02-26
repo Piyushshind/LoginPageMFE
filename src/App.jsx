@@ -12,8 +12,6 @@ import ErrorPage from "./components/views/ErrorPage/ErrorPage";
 import Footer from 'HomePageMFE/Footer'
 import HomePage from 'HomePageMFE/HomePage'
 const App = () => {
-
-
   return (
     <BrowserRouter>
       <div >

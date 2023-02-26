@@ -14,7 +14,8 @@ export const useMfeStore = create(persist((set, get) => ({
     },
     loginUser: (user) => set(state => ({ ...state, user }), true), // clears the entire store, actions included
     logoutUser: () => set((state) => ({ ...state, user: null })),
-    addToCart: (product) => set(state => ({ ...state, cart: updateCart(state.cart, product) }))
+    addToCart: (product) => set(state => ({ ...state, cart: updateCart(state.cart, product) })),
+    // removeFromCart: (product) => set(state => ({ ...state, cart: removeFromCart(state.cart, product) })),
 }), {
     name: 'mfe-store',
     getStorage: () => localStorage,

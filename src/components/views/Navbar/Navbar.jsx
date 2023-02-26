@@ -1,11 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styles from './Navbar.module.css';
-import Text from '../Text/Text'
+import PropTypes from 'prop-types';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import MyInput from '../MyInput/MyInput';
-import { FaSearchengin } from "react-icons/fa";
-import MyButton from '../MyButton/MyButton';
+import styles from './Navbar.module.css';
 
 /**
  * Impliments Navbar component
