@@ -26,11 +26,11 @@ const App = () => {
           {/* <AppHeader /> */}
           <Centerlizer>
             <Routes>
-              <Route path='/' element={<HomePage/>} />
-              {/* <Route path='/login' element={<LoginPage />} /> */}
+              <Route path='/' element={<HomePage />} />
+              <Route path='/login' element={<LoginPage />} />
               <Route path='/signIn' element={<RegisterPage />} />
-              {/* <Route path='/product' element={<SingleProductPage />} />
-              <Route path='/checkout' element={<SingleProductPage />} /> */}
+              <Route path='/product' element={<SingleProductPage />} />
+              <Route path='/checkout' element={<SingleProductPage />} />
               <Route path="*" element={<ErrorPage />}/>
               
             </Routes>
