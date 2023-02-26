@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware';
+import { updateCart } from './cartHelpers';
 
 export const useMfeStore = create(persist((set, get) => ({
     user: null,
@@ -13,7 +14,7 @@ export const useMfeStore = create(persist((set, get) => ({
     },
     loginUser: (user) => set(state => ({ ...state, user }), true), // clears the entire store, actions included
     logoutUser: () => set((state) => ({ ...state, user: null })),
-    addToCart: () => set(state => ({}))
+    addToCart: (product) => set(state => ({ ...state, cart: updateCart(state.cart, product) }))
 }), {
     name: 'mfe-store',
     getStorage: () => localStorage,

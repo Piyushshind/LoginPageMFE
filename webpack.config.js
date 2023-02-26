@@ -51,11 +51,12 @@ module.exports = {
         ProductPageMFE: 'ProductPageMFE@http://localhost:3004/remoteEntry.js',
       },
       exposes: {
-        './Text': './src/components/views/Text/Text.jsx',
         './useMfeStore': './src/utils/zustand.jsx',
-        './LoginPage':'./src/components/views/LoginPage/LoginPage.jsx',
-        './RegisterPage':'./src/components/views/RegisterPage/RegisterPage.jsx',
-        './ErrorPage':'./src/components/views/ErrorPage/ErrorPage.jsx'
+        './products': './src/utils/products.jsx',
+        './Text': './src/components/views/Text/Text.jsx',
+        './LoginPage': './src/components/views/LoginPage/LoginPage.jsx',
+        './RegisterPage': './src/components/views/RegisterPage/RegisterPage.jsx',
+        './ErrorPage': './src/components/views/ErrorPage/ErrorPage.jsx',
       },
       shared: {
         ...deps,

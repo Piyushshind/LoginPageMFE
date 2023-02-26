@@ -2,8 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import classes from "./ProductCard.module.css";
 import { Text } from "../Text/Text";
-import { useRecoilState } from "recoil";
-import { cartCount } from "../../../Recoil/Recoil";
 
 /**
  * Impliments ProductCard component
@@ -15,14 +13,13 @@ import { cartCount } from "../../../Recoil/Recoil";
 
 export const ProductCard = (props) => {
   const { productImage, vendor, productName, productPrice} = props;
-  const [count ,setCount] = useRecoilState(cartCount)
   return (
     <>
     <div className={classes.container}>
       <img src={productImage} />
       <Text variant="text-sm">{vendor}</Text>
       <Text variant="heading-sm">{productName}</Text>
-      <Text><p  onClick={()=>setCount(count + 1)}> {productPrice}</p></Text>
+      {/* <Text><p  onClick={()=>setCount(count + 1)}> {productPrice}</p></Text> */}
       
     </div>
     

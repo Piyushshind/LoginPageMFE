@@ -1,13 +1,10 @@
-import React ,{useState} from 'react'
-import PropTypes from 'prop-types'
-import {useForm} from 'react-hook-form';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 //import classes from './RegisterPage.module.css';
-import style from './RegisterPage.module.css'
+import MyButton from '../MyButton/MyButton.jsx';
 import MyInput from '../MyInput/MyInput';
-import MyButton from '../MyButton/MyButton.jsx'
-import { isValidEmail ,isValidPassword,isValidMobile,isValidName} from './Validation';
-import { useRecoilState, useSetRecoilState } from 'recoil';
-import { userData } from '../../../Recoil/Recoil';
+import style from './RegisterPage.module.css';
+import { isValidEmail, isValidMobile, isValidName, isValidPassword } from './Validation';
 
 
 /**

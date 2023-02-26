@@ -7,6 +7,7 @@ import Header from "./components/views/Header/Header";
 import Navbar from "./components/views/Navbar/Navbar";
 import "./index.css";
 import RegisterPage from "./components/views/RegisterPage/RegisterPage";
+import LoginPage from "./components/views/LoginPage/LoginPage";
 import ErrorPage from "./components/views/ErrorPage/ErrorPage";
 import Footer from 'HomePageMFE/Footer'
 import HomePage from 'HomePageMFE/HomePage'
