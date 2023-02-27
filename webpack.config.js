@@ -2,6 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const dotenv = require("dotenv");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const Dotenv = require('dotenv-webpack');
+
 dotenv.config()
 
 const deps = require("./package.json").dependencies;
@@ -43,8 +44,8 @@ module.exports = (env)=>({
     ],
   },
 
-  plugins: [new Dotenv(),
-    
+  plugins: [
+    new Dotenv(),
     new ModuleFederationPlugin({
       name: "LoginPageMFE",
       filename: "remoteEntry.js",
