@@ -1,11 +1,11 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const dotenv = require("dotenv");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-
+const Dotenv = require('dotenv-webpack');
 dotenv.config()
 
 const deps = require("./package.json").dependencies;
-module.exports = {
+module.exports = (env)=>({
   output: {
     publicPath: "http://localhost:3002/",
   },
@@ -43,15 +43,16 @@ module.exports = {
     ],
   },
 
-  plugins: [
+  plugins: [new Dotenv(),
+    
     new ModuleFederationPlugin({
       name: "LoginPageMFE",
       filename: "remoteEntry.js",
       remotes: {
-        HomePageMFE: `HomePageMFE@${process.env.HomePageMfe}remoteEntry.js`,
-        LoginPageMFE: 'LoginPageMFE@http://localhost:3002/remoteEntry.js',
-        CheckoutPageMFE: 'CheckoutPageMFE@http://localhost:3003/remoteEntry.js',
-        ProductPageMFE: 'ProductPageMFE@http://localhost:3004/remoteEntry.js',
+        
+        HomePageMFE: `HomePageMFE@${process.env.HomePageMFE}remoteEntry.js`,
+        ProductPageMFE: `ProductPageMFE@${process.env.ProductPageMFE}remoteEntry.js`,
+        CheckoutPageMFE: `CheckoutPageMFE@${process.env.CheckoutPageMFE}remoteEntry.js`,
       },
       exposes: {
         './useMfeStore': './src/utils/zustand.jsx',
@@ -78,4 +79,4 @@ module.exports = {
       template: "./src/index.html",
     }),
   ],
-};
+});
