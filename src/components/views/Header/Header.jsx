@@ -26,7 +26,7 @@ export const Header = (props) => {
         </div>
         <div className={styles.logo}>
           <img
-            src="https://play-lh.googleusercontent.com/EuiZnkT8aEKjXDLX74DTp1VRIwWaeRa8Dvo-LOGAxy1FPQ8GzABTIRenksiM-A7Oz48g"
+            src="https://img.freepik.com/free-vector/open-service-available-24-hours-7-days-with-clock-sign_1017-42536.jpg?w=740&t=st=1677516929~exp=1677517529~hmac=65cafd05ca1500aad3b54595742d5ada962a8bb194d79abecf1af9be690c3443"
             alt="Flipkart logo"
           />
         </div>

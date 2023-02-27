@@ -3,7 +3,7 @@
 .register{
     max-width: 70rem;
     width: 100vw;
-    position: absolute;
+    /* position: absolute; */
     border: 3px solid #e2edf3;
     border-radius: 5px;
     box-shadow: 1px 3px 10px #104f8f;
@@ -12,6 +12,7 @@
     justify-content: center;
     margin-top: 5rem;
     align-items:center;
+    margin-bottom: 2rem;
    
   
   }

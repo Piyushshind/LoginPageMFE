@@ -17,7 +17,7 @@ const App = () => {
       <div >
         <Header />
         <Navbar />
-        <Footer />
+        
         <Centerlizer>
           <Routes>
             <Route path='/' element={<HomePage />} />
@@ -28,6 +28,7 @@ const App = () => {
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Centerlizer>
+        <Footer />
       </div>
     </BrowserRouter>
   );
