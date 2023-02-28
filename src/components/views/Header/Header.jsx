@@ -19,9 +19,9 @@ export const Header = (props) => {
  
       
     const userData = JSON.parse(localStorage.getItem('userDetails'))
-    const finalUserName = userData.slice(-1)
+    const finalUserName = userData?.slice(-1)
     
-    const userName = finalUserName?.length>0? finalUserName[0].name : 'geust'
+    const userName = finalUserName?.length>0? finalUserName[0].name : 'guest'
     console.log(userName)
   return (
     <>
@@ -40,6 +40,7 @@ export const Header = (props) => {
 
         </div>
         <div className={styles.cart}>
+          <h3>welcome</h3>
           <span><h2>{userName}</h2></span>
          
         </div>
