@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classes from './HomePage.module.css';
 import ProductCard from 'HomePageMFE/ProductCard';
-import Hero from '../Hero/Hero';
+import Hero from 'HomePageMFE/Hero';
+import Category from 'HomePageMFE/Category';
 import Vertical from '../Vertical/Vertical';
 import { productData } from '../../../Constdata/mockdata'
 
@@ -20,10 +21,8 @@ export const HomePage = (props) => {
     return (
 
         <div className={classes.container}>
-           <img
-            src="https://img.freepik.com/free-vector/open-service-available-24-hours-7-days-with-clock-sign_1017-42536.jpg?w=740&t=st=1677516929~exp=1677517529~hmac=65cafd05ca1500aad3b54595742d5ada962a8bb194d79abecf1af9be690c3443"
-            alt="Flipkart logo"
-          />
+           <Hero />
+           <Category />
         </div>
     )
 }

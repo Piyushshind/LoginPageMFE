@@ -14,6 +14,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import classes from './LoginPage.module.css';
+import { useNavigate } from 'react-router-dom';
+
 
 
 
@@ -25,13 +27,13 @@ import classes from './LoginPage.module.css';
  * @returns LoginPage
  */
 
-
+// console.log(username, 'hiii')
   
   const theme = createTheme();
 
 export const LoginPage = (props) => {
- 
-  
+    const navigate = useNavigate()
+          
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -40,15 +42,17 @@ export const LoginPage = (props) => {
           password: data.get('password'),
         };
         const userData = JSON.parse(localStorage.getItem('userDetails'))
-       const finalData = userData.filter((x)=>{x.email===dataa.email && x.password===dataa.password})
+       const finalData = userData.filter((x)=>x.email===dataa.email && x.password===dataa.password)
+          
          if(finalData.length>0 ){
           alert('loged in succussesfull')
-         
+          window.location.href='/'
+          
          }else{
           alert('fill coorect Details please')
           return
          }
-         console.log(finalData ,'from login')
+         
     };
     return (
         <div>

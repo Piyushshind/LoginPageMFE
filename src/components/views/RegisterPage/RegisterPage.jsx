@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
+
 //import classes from './RegisterPage.module.css';
 import MyButton from '../MyButton/MyButton.jsx';
 import MyInput from '../MyInput/MyInput';
+
 import style from './RegisterPage.module.css';
 import { isValidEmail, isValidMobile, isValidName, isValidPassword } from './Validation';
 
@@ -21,8 +23,8 @@ export const RegisterPage = (props) => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [phone, setPhone] = useState("");
-    const [Data, setData] = useState([]);
-    // const setData = useSetRecoilState(userData)
+    const [Data, setData] = useState(JSON.parse(localStorage.getItem('userDetails')||'[]')||[]);
+   
     
     
     
@@ -43,6 +45,7 @@ export const RegisterPage = (props) => {
          
         
         setData([...Data,dataObj])
+        
         setEmail('')
         setName('')
         setPhone('')
@@ -58,6 +61,7 @@ export const RegisterPage = (props) => {
       
      }
      localStorage.setItem('userDetails', JSON.stringify(Data));
+
     return (
         
         <div className={style.register}>

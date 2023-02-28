@@ -12,16 +12,19 @@ import ErrorPage from "./components/views/ErrorPage/ErrorPage";
 import Footer from 'HomePageMFE/Footer'
 import HomePage from './components/views/HomePage/HomePage';
 import RoutingComponant from './components/views/RoutingComponant/RoutingComponant';
+import { RecoilRoot } from 'recoil';
 const App = () => {
   return (
+    < >
     <BrowserRouter>
-      < >
+      <RecoilRoot>
         <Header />
         <Navbar />
         <RoutingComponant />
         <Footer />
-      </>
+        </RecoilRoot>
    </BrowserRouter>
+   </>
   );
-}
+}           
 ReactDOM.render(<App />, document.getElementById("app"));

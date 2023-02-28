@@ -1,5 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
+
+
+
 import styles from './Header.module.css';
 
 /**
@@ -11,13 +14,15 @@ import styles from './Header.module.css';
  */
 
 export const Header = (props) => {
-  const cardCount = ''
-  // useEffect(()=>{
-  //   const userData = JSON.parse(localStorage.getItem('userDetails'))
-  //   setUserInfo(userData)
-  // },[])
-
-
+      
+    
+ 
+      
+    const userData = JSON.parse(localStorage.getItem('userDetails'))
+    const finalUserName = userData.slice(-1)
+    
+    const userName = finalUserName?.length>0? finalUserName[0].name : 'geust'
+    console.log(userName)
   return (
     <>
       <header className={styles.header}>
@@ -35,8 +40,8 @@ export const Header = (props) => {
 
         </div>
         <div className={styles.cart}>
-          <span><h3>{cardCount}</h3></span>
-          <h2></h2>
+          <span><h2>{userName}</h2></span>
+         
         </div>
       </header>
     </>
