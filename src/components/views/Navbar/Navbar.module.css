@@ -33,7 +33,7 @@ input {
 
 .btnsearch{
   padding: 10px;
-  background-color: #fff;
+  background-color: #000000;
   color: #000000;
   border: none;
   border-radius: 5px;
@@ -54,14 +54,11 @@ input {
 }
 
 .navLink {
-  color: #000000;
+  color: #0024d6;
   text-decoration: none;
 }
 
-.activeNavLink {
-  font-weight: bold;
-  color: red;
-}
+
 
 @media (max-width: 768px) {
   .navbar {

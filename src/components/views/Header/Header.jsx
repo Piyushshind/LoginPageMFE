@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-
+import {FaShopify} from 'react-icons/fa'
 
 
 import styles from './Header.module.css';
@@ -30,10 +30,7 @@ export const Header = (props) => {
           <i className="fas fa-bars"></i>
         </div>
         <div className={styles.logo}>
-          <img
-            src="https://img.freepik.com/free-vector/open-service-available-24-hours-7-days-with-clock-sign_1017-42536.jpg?w=740&t=st=1677516929~exp=1677517529~hmac=65cafd05ca1500aad3b54595742d5ada962a8bb194d79abecf1af9be690c3443"
-            alt="Flipkart logo"
-          />
+         <FaShopify style={{fontSize: "30px", color:'#3BB77E',marginRight:'18rem'}}/>
         </div>
         <div className={styles.search}>
           <input type="text" placeholder="Search for products, brands and more" />

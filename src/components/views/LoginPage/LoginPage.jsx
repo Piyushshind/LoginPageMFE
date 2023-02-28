@@ -57,7 +57,7 @@ export const LoginPage = (props) => {
     return (
         <div>
             <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="sm">
+      <Container component="main" maxWidth="sm" >
         <CssBaseline />
         <Box
           sx={{

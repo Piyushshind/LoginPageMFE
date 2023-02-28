@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Navbar.module.css';
-
+import {FaShopify} from 'react-icons/fa'
 /**
  * Impliments Navbar component
  * 
@@ -15,7 +15,9 @@ export const Navbar = (props) => {
     return (
        <>
              <nav className={styles.navbar}>
-      <div className={styles.brand}>Piyush</div>
+      <div className={styles.brand}>
+      <FaShopify style={{fontSize: "30px", color:'#3BB77E',marginRight:'18rem'}}/>
+      </div>
       {/* <div className={styles.search}>
         <MyInput type="text" placeholder="Search" onChange={(e)=>e.target.value} className={styles.searchbox}/>
         <MyButton type="submit" btnText={<FaSearchengin />}  className={styles.btnsearch}/>
