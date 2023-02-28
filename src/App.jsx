@@ -10,27 +10,18 @@ import RegisterPage from "./components/views/RegisterPage/RegisterPage";
 import LoginPage from "./components/views/LoginPage/LoginPage";
 import ErrorPage from "./components/views/ErrorPage/ErrorPage";
 import Footer from 'HomePageMFE/Footer'
-import HomePage from 'HomePageMFE/HomePage'
+import HomePage from './components/views/HomePage/HomePage';
+import RoutingComponant from './components/views/RoutingComponant/RoutingComponant';
 const App = () => {
   return (
     <BrowserRouter>
-      <div >
+      < >
         <Header />
         <Navbar />
-        
-        <Centerlizer>
-          <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/login' element={<LoginPage />} />
-            <Route path='/signIn' element={<RegisterPage />} />
-            <Route path='/product' element={<SingleProductPage />} />
-            <Route path='/checkout' element={<SingleProductPage />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
-        </Centerlizer>
+        <RoutingComponant />
         <Footer />
-      </div>
-    </BrowserRouter>
+      </>
+   </BrowserRouter>
   );
 }
 ReactDOM.render(<App />, document.getElementById("app"));

@@ -64,6 +64,8 @@ module.exports = (env)=>({
         './ErrorPage': './src/components/views/ErrorPage/ErrorPage.jsx',
         './ReactRouterDom': 'react-router-dom',
         './Navbar': './src/components/views/Navbar/Navbar.jsx',
+        './RoutingComponant': './src/components/views/RoutingComponant/RoutingComponant.jsx',
+        
       },
       shared: {
         ...deps,
