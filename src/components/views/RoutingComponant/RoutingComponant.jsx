@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import classes from './RoutingComponant.module.css';
@@ -8,8 +8,9 @@ import HomePage from '../HomePage/HomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import SingleProductPage from 'ProductPageMFE/SingleProductCard';
+import CheckoutPage from 'CheckoutPageMFE/CheckoutPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-
+import useMfeStore from '../../../utils/zustand';
 
 /**
  * Impliments RoutingComponant component
@@ -20,20 +21,21 @@ import RegisterPage from '../RegisterPage/RegisterPage';
  */
 
 export const RoutingComponant = (props) => {
+    const count = useMfeStore(state => state.count)
     return (
         <>
-         
-           <Centerlizer>
-             <Routes>
-                <Route path='/' element={<HomePage />}/>
-                <Route path='/login' element={<LoginPage />} />
-                <Route path='/signIn' element={<RegisterPage />} />
-                <Route path='/product' element={<SingleProductPage />}/>
-                <Route path='/checkout' element={<SingleProductPage />}/>
-                <Route path="*" element={<ErrorPage />} />
-             </Routes>
-           </Centerlizer>
-         
+            <h1>{count}</h1>
+            <Centerlizer>
+                <Routes>
+                    <Route path='/' element={<HomePage useMfeStore={useMfeStore} />} />
+                    <Route path='/login' element={<LoginPage useMfeStore={useMfeStore} />} />
+                    <Route path='/signIn' element={<RegisterPage useMfeStore={useMfeStore} />} />
+                    <Route path='/product' element={<SingleProductPage useMfeStore={useMfeStore} />} />
+                    <Route path='/checkout' element={<CheckoutPage useMfeStore={useMfeStore} />} />
+                    <Route path="*" element={<ErrorPage />} />
+                </Routes>
+            </Centerlizer>
+
         </>
     )
 }
@@ -57,7 +59,7 @@ export const propTypes = {
  */
 
 export const defaultProps = {
-    example:'RoutingComponant'
+    example: 'RoutingComponant'
 };
 
 RoutingComponant.propTypes = propTypes;
