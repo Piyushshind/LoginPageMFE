@@ -1,11 +1,12 @@
+import { Button, OutlinedInput } from '@mui/material';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
 //import classes from './RegisterPage.module.css';
 import MyButton from '../MyButton/MyButton.jsx';
-import MyInput from '../MyInput/MyInput';
+import { MyInput } from '../MyInput/MyInput';
 
-import style from './RegisterPage.module.css';
+import classes from './RegisterPage.module.css';
 import { isValidEmail, isValidMobile, isValidName, isValidPassword } from './Validation';
 
 
@@ -18,70 +19,84 @@ import { isValidEmail, isValidMobile, isValidName, isValidPassword } from './Val
  */
 
 export const RegisterPage = (props) => {
-    
+
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [phone, setPhone] = useState("");
-    const [Data, setData] = useState(JSON.parse(localStorage.getItem('userDetails')||'[]')||[]);
-   
-    
-    
-    
+    const [Data, setData] = useState(JSON.parse(localStorage.getItem('userDetails') || '[]') || []);
 
-   
-    
-     const handleSubmit = () => {
-       
 
-       if(isValidName(name)===true && isValidEmail(email)===true && isValidPassword(password)===true && isValidMobile(phone)===true){
-        window.alert('Registration Complete !!');
-        const dataObj ={
-            name:name,
-            email:email,
-            password:password,
-            phone:phone
+
+
+
+
+
+    const handleSubmit = () => {
+        if (isValidEmail(email)) {
+            window.alert('Registration Complete !!');
+            const dataObj = {
+                name: name,
+                email: email,
+                password: password,
+                phone: phone
+            }
+
+
+            setData([...Data, dataObj])
+
+            setEmail('')
+            setName('')
+            setPhone('')
+            setPassword('')
+
+        } else {
+
+            window.alert('enter correct details')
+            return
         }
-         
-        
-        setData([...Data,dataObj])
-        
-        setEmail('')
-        setName('')
-        setPhone('')
-        setPassword('')
-       
-       }else{
-        
-        window.alert('enter correct details')
-        return
-       }
-    
-     
-      
-     }
-     localStorage.setItem('userDetails', JSON.stringify(Data));
+
+
+
+    }
+    localStorage.setItem('userDetails', JSON.stringify(Data));
 
     return (
-        
-        <div className={style.register}>
-            <div className={style.col-1}>
+
+        <div className={classes.register}>
+            <div className={classes.col - 1}>
                 <h2>Create an Account</h2>
                 <span>register and enjoy the service</span>
 
-                <form id='form' className= {style.flexx} onSubmit={(e)=>e.preventDefault()}>
-                    <MyInput className={style.Input_register} onChange={(e)=>setName(e.target.value)} placeholder='Name'value={name} />
-                    <MyInput placeholder='Email' className={style.Input_register} onChange={(e)=>setEmail(e.target.value)} value={email}/>
-                    <MyInput type="password" className={style.Input_register} placeholder='Password' onChange={(e)=>setPassword(e.target.value)} value={password}/>
-                    <MyInput className={style.Input_register} onChange={(e)=>setPhone(e.target.value)} placeholder='Mobile number'value={phone} />
-                    <MyButton className={style.btn} onClick={handleSubmit} btnText='Register'/>
+                <form id='form' className={classes.flexx} onSubmit={(e) => e.preventDefault()}>
+                    <OutlinedInput
+                        // className={classes.Input_register}
+                        onChange={(e) => setName(e.target.value)} placeholder='Name' value={name} />
+                    <OutlinedInput placeholder='Email'
+                        // className={classes.Input_register}
+                        onChange={(e) => setEmail(e.target.value)} value={email} />
+                    <OutlinedInput type="password"
+                        // className={classes.Input_register}
+                        placeholder='Password' onChange={(e) => setPassword(e.target.value)} value={password} />
+                    <OutlinedInput
+                        // className={classes.Input_register}
+                        onChange={(e) => setPhone(e.target.value)} placeholder='Mobile number' value={phone} />
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2 }}
+                        onClick={handleSubmit}
+                    >
+                        Register
+                    </Button>
                 </form>
 
-            </div> 
-            <div className={style.col}>
+            </div>
+            <div className={classes.col}>
                 <img src='https://media.gettyimages.com/id/1313326409/photo/womens-hands-type-text-on-the-keyboard-of-a-computer-or-laptop-an-office-worker-at-his-desk.jpg?s=612x612&w=0&k=20&c=YxytuknpTgLVsvXVSdHAUdjKqg6twC9HAXeHsep_w2c=' alt="Register-img" />
             </div>
-       
+
         </div>
     )
 }
@@ -105,7 +120,7 @@ export const propTypes = {
  */
 
 export const defaultProps = {
-    example:'RegisterPage'
+    example: 'RegisterPage'
 };
 
 RegisterPage.propTypes = propTypes;

@@ -13,12 +13,11 @@ import classes from './MyInput.module.scss';
  * @returns MyInput
  */
 
-export const MyInput = ({placeholder,className,maxLength,onChange,type,value}) => {
-   
+export const MyInput = (props) => {
+    console.log({ props })
     return (
         <div className={classes.container}>
-            <input placeholder={placeholder} className={className} maxLength={maxLength} onChange={onChange} type={type} value={value}/>
-           
+            <input {...props} />
         </div>
     )
 }
@@ -42,7 +41,7 @@ export const propTypes = {
  */
 
 export const defaultProps = {
-    example:'MyInput'
+    example: 'MyInput'
 };
 
 MyInput.propTypes = propTypes;

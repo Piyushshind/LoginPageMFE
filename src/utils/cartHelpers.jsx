@@ -3,7 +3,7 @@ export const updateCart = (cart, product) => {
     const isAlreadyAdded = cartItems?.findIndex(current => {
         return current.id == product.id
     })
-    const pricingDetails = structuredClone(cart.pricingDetails)
+    const pricingDetails = ({ ...cart.pricingDetails })
     if (isAlreadyAdded == -1) {
         cartItems.push({ ...product, quantity: 1 });
         alert(`${product.productName} has been added to cart`)
