@@ -20,18 +20,22 @@ import useMfeStore from '../../../utils/zustand';
  * @returns RoutingComponant
  */
 
+
 export const RoutingComponant = (props) => {
-    const count = useMfeStore(state => state.count)
+    const { routes = [{
+        path: "/", element: <HomePage />,
+        path: "/login", element: <LoginPage />,
+        path: "/signIn", element: <RegisterPage />,
+        path: "/product", element: <SingleProductPage />,
+        path: "/checkout", element: <CheckoutPage />,
+    }] } = props;
     return (
         <>
-            <h1>{count}</h1>
             <Centerlizer>
                 <Routes>
-                    <Route path='/' element={<HomePage useMfeStore={useMfeStore} />} />
-                    <Route path='/login' element={<LoginPage useMfeStore={useMfeStore} />} />
-                    <Route path='/signIn' element={<RegisterPage useMfeStore={useMfeStore} />} />
-                    <Route path='/product' element={<SingleProductPage useMfeStore={useMfeStore} />} />
-                    <Route path='/checkout' element={<CheckoutPage useMfeStore={useMfeStore} />} />
+                    {routes.map(route =>
+                        <Route path={route.path} element={route.element} />
+                    )}
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>
             </Centerlizer>
