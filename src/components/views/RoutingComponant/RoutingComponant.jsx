@@ -9,9 +9,9 @@ import HomePage from '../HomePage/HomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import SingleProductCard from 'ProductPageMFE/SingleProductCard';
-import CheckoutPage from 'CheckoutPageMFE/CheckoutPage';
+//import CheckoutPage from 'CheckoutPageMFE/CheckoutPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import useMfeStore from '../../../utils/zustand';
+
 import Aboutus from 'HomePageMFE/Aboutus'
 /**
  * Impliments RoutingComponant component
@@ -28,12 +28,13 @@ export const RoutingComponant = (props) => {
         <>
             <Centerlizer>
                 <Routes >
-                    <Route path="*" element={<ErrorPage />} />
+                   
                     <Route path="/" element={<HomePage />} />
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/signIn" element={<RegisterPage />} />
                     <Route path="/product" element={<SingleProductCard />} />
                     <Route path="/aboutus" element={<Aboutus />} />
+                    <Route path="*" element={<ErrorPage />} />
                 </Routes>
             </Centerlizer>
            
