@@ -78,6 +78,7 @@
   .register .col img{
     width: 480px;
     height: 100%;
+    margin-left: 2rem;
     object-fit: cover;
     align-self: flex-end;
     border-top-right-radius: 5px;

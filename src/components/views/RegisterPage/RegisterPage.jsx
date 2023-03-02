@@ -1,6 +1,7 @@
 import { Button, OutlinedInput } from '@mui/material';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 //import classes from './RegisterPage.module.css';
 import MyButton from '../MyButton/MyButton.jsx';
@@ -35,7 +36,7 @@ export const RegisterPage = (props) => {
     const handleSubmit = () => {
         if (isValidEmail(email)) {
             window.alert('Registration Complete !!');
-            
+
             const dataObj = {
                 name: name,isLogin:false,
                 email: email,
@@ -65,7 +66,7 @@ export const RegisterPage = (props) => {
     return (
 
         <div className={classes.register}>
-            <div className={classes.col - 1}>
+            <div className={classes.col}>
                 <h2>Create an Account</h2>
                 <span>register and enjoy the service</span>
 
@@ -91,6 +92,7 @@ export const RegisterPage = (props) => {
                     >
                         Register
                     </Button>
+                    <span>Alraedy have an account ? <Link to='/login'>Login</Link></span>
                 </form>
 
             </div>
