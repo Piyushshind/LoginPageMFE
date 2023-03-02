@@ -45,6 +45,8 @@ export const LoginPage = (props) => {
     };
     const userData = JSON.parse(localStorage.getItem('userDetails'))
     const finalData = userData.filter((x) => x.email === dataa.email && x.password === dataa.password)
+    const finalIndex = userData.findIndex((x) => x.email === dataa.email && x.password === dataa.password)
+    console.log(finalIndex)
     if (finalData.length > 0) {
       login(finalData[0])
       alert('loged in succussesfull')

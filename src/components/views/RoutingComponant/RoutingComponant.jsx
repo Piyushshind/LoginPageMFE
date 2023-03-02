@@ -5,13 +5,14 @@ import classes from './RoutingComponant.module.css';
 import { Route, Routes } from 'react-router-dom';
 import Centerlizer from '../Centerlizer/Centerlizer';
 import HomePage from '../HomePage/HomePage';
+//import Aboutus from '../HomePage/Aboutus';
 import LoginPage from '../LoginPage/LoginPage';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import SingleProductPage from 'ProductPageMFE/SingleProductCard';
 import CheckoutPage from 'CheckoutPageMFE/CheckoutPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import useMfeStore from '../../../utils/zustand';
-
+import Aboutus from 'HomePageMFE/Aboutus'
 /**
  * Impliments RoutingComponant component
  * 
@@ -31,15 +32,16 @@ export const RoutingComponant = (props) => {
     //     path: "*", element: <ErrorPage />,
 
     // }] } = props;
-    return (
+    return ( 
         <>
             <Centerlizer>
                 <Routes >
                     <Route path="*" element={<ErrorPage />} />
                     <Route path="/" element={<HomePage />} />
                     <Route path="/login" element={<LoginPage />} />
-                    <Route path="signIn" element={<RegisterPage />} />
-                    <Route path="product" element={<SingleProductPage />} />
+                    <Route path="/signIn" element={<RegisterPage />} />
+                    <Route path="/product" element={<SingleProductPage />} />
+                    <Route path="/aboutus" element={<Aboutus />} />
                 </Routes>
             </Centerlizer>
 

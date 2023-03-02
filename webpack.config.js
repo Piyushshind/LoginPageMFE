@@ -64,6 +64,7 @@ module.exports = (env)=>({
         './ErrorPage': './src/components/views/ErrorPage/ErrorPage.jsx',
         './Navbar': './src/components/views/Navbar/Navbar.jsx',
         './RoutingComponant': './src/components/views/RoutingComponant/RoutingComponant.jsx',
+        './Centerlizer':'./src/components/views/Centerlizer/Centerlizer.jsx'
       },
       shared: {
         ...deps,

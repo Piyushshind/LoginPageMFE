@@ -35,8 +35,9 @@ export const RegisterPage = (props) => {
     const handleSubmit = () => {
         if (isValidEmail(email)) {
             window.alert('Registration Complete !!');
+            
             const dataObj = {
-                name: name,
+                name: name,isLogin:false,
                 email: email,
                 password: password,
                 phone: phone
