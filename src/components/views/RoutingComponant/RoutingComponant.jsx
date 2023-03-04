@@ -8,7 +8,7 @@ import HomePage from '../HomePage/HomePage';
 //import Aboutus from '../HomePage/Aboutus';
 import LoginPage from '../LoginPage/LoginPage';
 import ErrorPage from '../ErrorPage/ErrorPage';
-import SingleProductCard from 'ProductPageMFE/SingleProductCard';
+//import SingleProductCard from 'ProductPageMFE/SingleProductCard';
 //import CheckoutPage from 'CheckoutPageMFE/CheckoutPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
@@ -32,7 +32,7 @@ export const RoutingComponant = (props) => {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/signIn" element={<RegisterPage />} />
-                    <Route path="/product" element={<SingleProductCard />} />
+                    
                     <Route path="/aboutus" element={<Aboutus />} />
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>

@@ -27,7 +27,7 @@ export function isValidEmail(value) {
 }
 
 export function isValidPassword(value) {
-  const validate = /^(?=(.*[a-z]))(?=(.*[A-Z]))(?=(.*[0-9]))(?=(.*[!@#$%^&*()\-__+.])).{8,}$/
+  const validate =  /^(?=(.*[a-z]))(?=(.*[A-Z]))(?=(.*[0-9]))(?=(.*[!@#$%^&*()\-__+.])).{8,}$/
   if (validate.test(value)) {
     return true
   } else {

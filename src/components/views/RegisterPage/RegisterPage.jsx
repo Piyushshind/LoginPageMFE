@@ -2,13 +2,13 @@ import { Button, OutlinedInput } from '@mui/material';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import {nanoid} from 'nanoid'
 //import classes from './RegisterPage.module.css';
 import MyButton from '../MyButton/MyButton.jsx';
 import { MyInput } from '../MyInput/MyInput';
 
 import classes from './RegisterPage.module.css';
-import { isValidEmail, isValidMobile, isValidName, isValidPassword } from './Validation';
+import { isValidEmail, isValidMobile } from './Validation';
 
 
 /**
@@ -30,15 +30,17 @@ export const RegisterPage = (props) => {
 
 
 
-
-
-
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+])(?=.*[a-zA-Z]).{8,}$/;
+     const validate = (isValidEmail(email) && isValidMobile(phone) && passwordRegex.test(password))
+            console.log(passwordRegex.test(password))
     const handleSubmit = () => {
-        if (isValidEmail(email)) {
+        if (validate) {
             window.alert('Registration Complete !!');
 
             const dataObj = {
-                name: name,isLogin:false,
+                name: name,
+                isLogin:false,
+                id:nanoid(),
                 email: email,
                 password: password,
                 phone: phone
