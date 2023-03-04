@@ -31,6 +31,7 @@ export const removeFromCart = (cart, product) => {
     const productIndex = cart?.cartItems?.findIndex(current => {
         return current.id == product.id
     })
+
     cart.pricingDetails.subtotal = cart.pricingDetails.subtotal - (cart.cartItems[productIndex].price * cart.cartItems[productIndex].quantity)
     cart.cartItems = cart.cartItems.filter(item => item.id != product.id)
 

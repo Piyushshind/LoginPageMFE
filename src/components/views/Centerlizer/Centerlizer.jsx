@@ -14,10 +14,12 @@ import classes from './Centerlizer.module.css';
  */
 
 export const Centerlizer = (props) => {
-    const {children}= props
+    const { children } = props
     return (
         <div className={classes.container}>
-          {children} 
+            <div>
+                {children}
+            </div>
         </div>
     )
 }
@@ -41,7 +43,7 @@ export const propTypes = {
  */
 
 export const defaultProps = {
-    example:'Centerlizer'
+    example: 'Centerlizer'
 };
 
 Centerlizer.propTypes = propTypes;

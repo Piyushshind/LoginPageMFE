@@ -10,7 +10,6 @@ const App = () => {
   return (
     < >
       <BrowserRouter>
-       
         <Navbar />
         <RoutingComponant />
         <Footer />

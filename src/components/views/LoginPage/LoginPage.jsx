@@ -26,7 +26,6 @@ import useMfeStore from '../../../utils/zustand';
  * @returns LoginPage
  */
 
-// console.log(username, 'hiii')
 
 const theme = createTheme();
 
@@ -36,22 +35,20 @@ export const LoginPage = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const dataa = {
-      email: data.get('email'),
-      password: data.get('password'),
+    const userFormData = new FormData(event.currentTarget);
+    const userInput = {
+      email: userFormData.get('email'),
+      password: userFormData.get('password'),
     };
-    const userData = JSON.parse(localStorage.getItem('userDetails'))
-    const finalData = userData.filter((x) => x.email === dataa.email && x.password === dataa.password)
-    const finalIndex = userData.findIndex((x) => x.email === dataa.email && x.password === dataa.password)
-    console.log(finalIndex)
+    const userData = JSON.parse(localStorage.getItem('userDetails') || '[]')
+    const finalData = userData.filter((x) => x.email === userInput.email && x.password === userInput.password)
     if (finalData.length > 0) {
       login(finalData[0])
-      alert('loged in succussesfull')
+      alert('Logged in successfully')
       window.location.href = '/'
 
     } else {
-      alert('fill coorect Details please')
+      alert('Invalid credentials')
       return
     }
 
@@ -117,7 +114,6 @@ export const LoginPage = (props) => {
 
         </Container>
       </ThemeProvider>
-     
     </div>
     
   )

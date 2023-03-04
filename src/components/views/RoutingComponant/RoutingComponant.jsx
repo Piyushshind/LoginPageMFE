@@ -9,7 +9,7 @@ import HomePage from '../HomePage/HomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import ErrorPage from '../ErrorPage/ErrorPage';
 //import SingleProductCard from 'ProductPageMFE/SingleProductCard';
-//import CheckoutPage from 'CheckoutPageMFE/CheckoutPage';
+import CheckoutPage from 'CheckoutPageMFE/CheckoutPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
 import Aboutus from 'HomePageMFE/Aboutus'
@@ -32,6 +32,7 @@ export const RoutingComponant = (props) => {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/signIn" element={<RegisterPage />} />
+                    <Route path="/checkout" element={<CheckoutPage />} />
                     
                     <Route path="/aboutus" element={<Aboutus />} />
                     <Route path="*" element={<ErrorPage />} />

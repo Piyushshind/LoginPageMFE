@@ -2,7 +2,7 @@ import { Button, OutlinedInput } from '@mui/material';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {nanoid} from 'nanoid'
+import { nanoid } from 'nanoid'
 //import classes from './RegisterPage.module.css';
 import MyButton from '../MyButton/MyButton.jsx';
 import { MyInput } from '../MyInput/MyInput';
@@ -19,51 +19,43 @@ import { isValidEmail, isValidMobile } from './Validation';
  * @returns RegisterPage
  */
 
-export const RegisterPage = (props) => {
+export const RegisterPage = () => {
 
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [phone, setPhone] = useState("");
-    const [Data, setData] = useState(JSON.parse(localStorage.getItem('userDetails') || '[]') || []);
-
-
-
-
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+])(?=.*[a-zA-Z]).{8,}$/;
-     const validate = (isValidEmail(email) && isValidMobile(phone) && passwordRegex.test(password))
-            console.log(passwordRegex.test(password))
+    const validate = (isValidEmail(email) && isValidMobile(phone) && passwordRegex.test(password))
     const handleSubmit = () => {
+        const registerdUsers = JSON.parse(localStorage.getItem('userDetails') || '[]')
+
+        if (registerdUsers.findIndex(user => user.email == email) != -1) {
+            window.alert('Already registered, please login');
+            window.location.href = '/login'
+            return
+        }
         if (validate) {
             window.alert('Registration Complete !!');
-
             const dataObj = {
                 name: name,
-                isLogin:false,
-                id:nanoid(),
+                id: nanoid(),
                 email: email,
                 password: password,
                 phone: phone
             }
-
-
-            setData([...Data, dataObj])
-
             setEmail('')
             setName('')
             setPhone('')
             setPassword('')
-
+            localStorage.setItem('userDetails', JSON.stringify(
+                [...registerdUsers,
+                    dataObj]));
         } else {
-
             window.alert('enter correct details')
             return
         }
-
-
-
     }
-    localStorage.setItem('userDetails', JSON.stringify(Data));
 
     return (
 
