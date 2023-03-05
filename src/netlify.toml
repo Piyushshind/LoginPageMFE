@@ -1,0 +1,4 @@
+[[redirect]]
+from = "/*"
+to = "/index.hthl"
+status = 200
