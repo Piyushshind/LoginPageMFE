@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { nanoid } from 'nanoid'
-//import classes from './RegisterPage.module.css';
-import MyButton from '../MyButton/MyButton.jsx';
-import { MyInput } from '../MyInput/MyInput';
-
 import classes from './RegisterPage.module.css';
 import { isValidEmail, isValidMobile } from './Validation';
 
