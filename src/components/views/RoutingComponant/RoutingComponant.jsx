@@ -23,22 +23,20 @@ import Aboutus from 'HomePageMFE/Aboutus'
 
 
 export const RoutingComponant = (props) => {
-   
-    return ( 
+
+    return (
         <>
             <Centerlizer>
                 <Routes >
-                   
                     <Route path="/" element={<HomePage />} />
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/signIn" element={<RegisterPage />} />
                     <Route path="/checkout" element={<CheckoutPage />} />
-                    
                     <Route path="/aboutus" element={<Aboutus />} />
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>
             </Centerlizer>
-           
+
         </>
     )
 }

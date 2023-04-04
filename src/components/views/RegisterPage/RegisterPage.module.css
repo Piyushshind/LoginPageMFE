@@ -1,96 +1,90 @@
+.register {
+  max-width: 70rem;
+  width: 100vw;
+  /* position: absolute; */
+  border: 3px solid #e2edf3;
+  border-radius: 5px;
+  box-shadow: 1px 3px 10px #104f8f;
+  background-color: #d4e2f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  margin-bottom: 8rem;
+}
 
+.register span {
+  color: #595c5f;
+}
 
-.register{
-    max-width: 70rem;
-    width: 100vw;
-    /* position: absolute; */
-    border: 3px solid #e2edf3;
-    border-radius: 5px;
-    box-shadow: 1px 3px 10px #104f8f;
-    background-color: #d4e2f1;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    margin-top: 5rem;
-    margin-bottom: 8rem;
-   
-   
-  
-  }
-  
-  .register span{
-    color: #595c5f;
-  }
-  
-  #form{
-    max-width: 320px;
-    width: 100vw;
-    margin: 2em auto;
-    
-  }
-  
- .btn{
-    border: 1px solid #eef0f2;
-    padding: .9em 1em;
-  }
-  .MyInput, .btn{
-    border: 1px solid #e9ecef;
-    padding: .9em 1em;
-  }
-  .Input_register{
-    border: 2px solid #1c80e4;
-    padding: .9em 1em;
-    outline: none;
-    width: 19.5rem;
-  }
-  /* .Input_register :focus{
+#form {
+  max-width: 320px;
+  width: 100vw;
+  margin: 2em auto;
+}
+
+.btn {
+  border: 1px solid #eef0f2;
+  padding: 0.9em 1em;
+}
+.MyInput,
+.btn {
+  border: 1px solid #e9ecef;
+  padding: 0.9em 1em;
+}
+.Input_register {
+  border: 2px solid #1c80e4;
+  padding: 0.9em 1em;
+  outline: none;
+  width: 19.5rem;
+}
+/* .Input_register :focus{
     border: 1px solid #e4af1c;
     outline-color: #e4af1c;
   }
   #form > input:focus{
     outline: none;
   } */
-  
-  .btn{
-    background-color:#253D4E;
-    color: #e9ecef;
-    font-size: 1.1em;
-    cursor: pointer;
-    border-radius: 35px;
+
+.btn {
+  background-color: #253d4e;
+  color: #e9ecef;
+  font-size: 1.1em;
+  cursor: pointer;
+  border-radius: 35px;
+}
+
+.flexx {
+  display: flex;
+  gap: 1em;
+}
+
+.flexx {
+  flex-direction: column;
+  margin: auto;
+  padding: 3em 0;
+}
+
+.register .flexx {
+  margin: auto;
+  padding: 3em 0;
+}
+
+.register .col img {
+  width: 480px;
+  height: 100%;
+  margin-left: 2rem;
+  object-fit: cover;
+  align-self: flex-end;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: none;
+  border: 3px solid rgb(73, 163, 236);
+  border-radius: 18px;
+}
+
+@media screen and (min-width: 860px) {
+  .register .col img {
+    display: initial;
   }
-  
-  .flexx{
-    display: flex;
-    gap: 1em;
-  }
-  
-  .flexx{
-    flex-direction: column;
-    margin: auto;
-    padding: 3em 0;
-  }
- 
-  .register .flexx{
-    margin: auto;
-    padding: 3em 0;
-   
-  }
-  
-  .register .col img{
-    width: 480px;
-    height: 100%;
-    margin-left: 2rem;
-    object-fit: cover;
-    align-self: flex-end;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    display: none;
-    border: 3px solid rgb(73, 163, 236);
-    border-radius: 18px;
-  }
-  
-  @media screen and (min-width: 860px)  {
-    .register .col img{
-      display: initial;
-    }
-  }
+}
