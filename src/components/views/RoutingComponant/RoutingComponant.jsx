@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-import classes from './RoutingComponant.module.css';
+//import classes from './RoutingComponant.module.css';
 import { Route, Routes } from 'react-router-dom';
 import Centerlizer from '../Centerlizer/Centerlizer';
 import HomePage from '../HomePage/HomePage';
